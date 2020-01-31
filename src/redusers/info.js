@@ -1,8 +1,6 @@
 const initialState = {
-    info: [{
-        id: '2',
-        title: 'heloo'
-    }]
+    items: null,
+    filterBy: ''
 }
 
 
@@ -11,7 +9,12 @@ export default (state = initialState, action) => {
         case 'SET_INFO':
             return {
                 ...state,
-                info: action.payload
+                items: action.payload
+            }
+        case 'SET_FILTER':
+            return {
+                ...state,
+                filterBy: action.payload
             }
         default:
             return state
