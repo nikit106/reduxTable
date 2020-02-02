@@ -4,23 +4,16 @@ import App from '../components/App.jsx';
 import { bindActionCreators } from 'redux';
 import orderBy from 'lodash/orderBy.js'
 
-const sortBy = (info, filterBy) =>{
-  switch (filterBy) {
-    case 'Name':
-      return orderBy(info, 'Name', 'decs');
-    case 'Email':
-      return orderBy(info, 'Email', 'decs');
-    case 'Phone':
-      return orderBy(info, 'Phone', 'decs');
-    case 'Company':
-        return orderBy(info, 'Company', 'decs');
-    default:
-      return info
-  }
+
+
+const sortBy = (info, filterBy, sort) =>{
+    console.log(sort)
+    const sortType = sort === 'asc' ? 'desc' : 'asc'
+    return orderBy(info, `${filterBy}`, `${sortType}`)
 }
 
 const mapStateToProps = ({ info }) => ({
-    info: sortBy(info.items, info.filterBy)
+    info: sortBy(info.items, info.filterBy, info.sort)
   })
   
   const mapDispatchToProps = dispatch => ({

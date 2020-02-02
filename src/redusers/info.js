@@ -1,6 +1,7 @@
 const initialState = {
     items: null,
-    filterBy: ''
+    filterBy: '',
+    sort: 'asc'
 }
 
 
@@ -9,7 +10,7 @@ export default (state = initialState, action) => {
         case 'SET_INFO':
             return {
                 ...state,
-                items: action.payload
+                items: action.payload,
             }
         case 'SET_FILTER':
             return {
