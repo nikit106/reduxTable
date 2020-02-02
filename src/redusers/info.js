@@ -1,7 +1,7 @@
 const initialState = {
     items: null,
     filterBy: '',
-    sort: 'asc'
+    sort: 'desc'
 }
 
 

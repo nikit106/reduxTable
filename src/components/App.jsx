@@ -28,11 +28,14 @@ componentWillMount() {
                 </tr>
             </thead>
             <tbody className = "tableTbody">
-            {
-                info && info.map(item => (
-                <ItemCard {...item} />
-              ))
-            }
+              {
+                  info && info.map((item,index) => (
+                    <tr key = {index} className = "tableTr">
+                      <ItemCard {...item} />
+                    </tr>
+                ))
+              }
+            
             </tbody>
     </table>
    )
